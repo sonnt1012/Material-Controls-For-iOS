@@ -49,7 +49,7 @@
 @property(weak, nonatomic) UICollectionView *collectionView;
 @property(weak, nonatomic) UICollectionViewFlowLayout *collectionViewFlowLayout;
 
-@property(copy, nonatomic) NSDate *maximumDate;
+
 
 @property(nonatomic) MDCalendarCellStyle cellStyle;
 
@@ -147,7 +147,11 @@
   _cellStyle = MDCalendarCellStyleCircle;
 
   self.minimumDate = [NSDateHelper mdDateWithYear:1970 month:1 day:1];
-  _maximumDate = [NSDateHelper mdDateWithYear:2037 month:12 day:31];
+    
+  if (!_maximumDate) {
+       _maximumDate = [NSDateHelper mdDateWithYear:2037 month:12 day:31];
+  }
+  
 
   MDCalendarYearSelector *yearSelector =
       [[MDCalendarYearSelector alloc] initWithFrame:self.collectionView.frame
@@ -311,6 +315,7 @@
       [titleLabel setFont:_titleMonthFont];
       [titleLabel setTextColor:_titleColors[@(MDCalendarCellStateMonthTitle)]];
       [cell.contentView addSubview:titleLabel];
+        
     }
     // titleLabel.mdWidth = self.mdWidth;
     _dateHeader.dateFormatter.dateFormat = @"MMMM yyyy";
@@ -439,6 +444,15 @@
   _minimumDate = date;
   self.yearSelector.minimumDate = date;
   [self.collectionView reloadData];
+}
+
+- (void)setMaximumDate:(NSDate *)maximumDate;
+{
+    NSDate *date =
+    [[NSCalendarHelper mdSharedCalendar] startOfDayForDate:maximumDate];
+    _maximumDate = date;
+    self.yearSelector.maximumDate = date;
+    [self.collectionView reloadData];
 }
 
 - (void)setSelectedDate:(NSDate *)selectedDate {

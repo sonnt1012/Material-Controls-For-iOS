@@ -120,7 +120,12 @@
 #pragma mark - Private
 
 - (void)configureCell {
-  _titleLabel.text = [NSString stringWithFormat:@"%@", @(_date.mdDay)];
+    
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"dd"];
+  _titleLabel.text = [dateFormatter stringFromDate:_date];
+    
+  //_titleLabel.text = [NSString stringWithFormat:@"%@", @(_date.mdDay)];
   _titleLabel.textColor = [self colorForCurrentStateInDictionary:_titleColors];
   _titleLabel.hidden = self.isPlaceholder && !self.showPlaceholder;
   _backgroundLayer.fillColor =

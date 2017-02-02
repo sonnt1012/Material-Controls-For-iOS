@@ -777,6 +777,24 @@
   _textView.keyboardType = keyboardType;
 }
 
+- (void)setAutocapitalizationType:(UITextAutocapitalizationType)autocapitalizationType {
+  _autocapitalizationType = autocapitalizationType;
+  _textField.autocapitalizationType = autocapitalizationType;
+  _textView.autocapitalizationType = autocapitalizationType;
+}
+
+- (void)setAutocorrectionType:(UITextAutocorrectionType)autocorrectionType {
+  _autocorrectionType = autocorrectionType;
+  _textField.autocorrectionType = autocorrectionType;
+  _textView.autocorrectionType = autocorrectionType;
+}
+
+- (void)setSpellCheckingType:(UITextSpellCheckingType)spellCheckingType {
+  _spellCheckingType = spellCheckingType;
+  _textField.spellCheckingType = spellCheckingType;
+  _textView.spellCheckingType = spellCheckingType;
+}
+
 - (void)setDividerAnimation:(BOOL)dividerAnimation {
   _dividerAnimation = dividerAnimation;
   [_dividerHolder setUseAnimation:_dividerAnimation];

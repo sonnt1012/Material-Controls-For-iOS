@@ -885,6 +885,18 @@ namespace MaterialControls
 		[Export("keyboardType")]
 		UIKeyboardType KeyboardType { get; set; }
 
+		// @property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
+		[Export("autocapitalizationType")]
+		UITextAutocapitalizationType AutocapitalizationType { get; set; }
+
+		// @property (nonatomic) UITextAutocorrectionType autocorrectionType;
+		[Export("autocorrectionType")]
+		UITextAutocorrectionType AutocorrectionType { get; set; }
+
+		// @property (nonatomic) UITextSpellCheckingType spellCheckingType;
+		[Export("spellCheckingType")]
+		UITextSpellCheckingType SpellCheckingType { get; set; }
+
 		// @property (nonatomic) BOOL hasError;
 		[Export("hasError")]
 		bool HasError { get; set; }

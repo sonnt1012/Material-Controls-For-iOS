@@ -28,6 +28,9 @@
 
 @interface MDDatePicker : UIView
 @property(weak, nonatomic) IBOutlet id<MDCalendarDelegate> delegate;
+- (void) setCalendarHeaderBackgroundColor:(UIColor*)color;
+- (void) setCalendarHeaderDayLabelBackgroundColor:(UIColor*)color;
+- (void) setPickedDayColor:(UIColor*)color;
 @end
 
 #endif

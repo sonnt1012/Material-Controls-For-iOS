@@ -219,6 +219,11 @@
   _titleThemeColors[@(MDCalendarThemeDark)] = titleColorsDark;
 }
 
+- (void) overrideSelectedCellColor:(UIColor*) color {
+    _backgroundThemeColors[@(MDCalendarThemeLight)][@(MDCalendarCellStateSelected)] = color;
+    _backgroundThemeColors[@(MDCalendarThemeDark)][@(MDCalendarCellStateSelected)] = color;
+}
+
 - (void)setTheme:(MDCalendarTheme)theme {
   if (_theme != theme) {
     _theme = theme;

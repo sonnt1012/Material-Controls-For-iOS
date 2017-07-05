@@ -689,7 +689,7 @@ namespace MaterialControls
 
 		// -(NSMutableArray *)tabs;
 		[Export("tabs")]
-		NSMutableArray Tabs();
+		NSMutableArray<UIView> Tabs();
 
 		// -(void)moveIndicatorToFrame:(CGRect)frame withAnimated:(BOOL)animated;
 		[Export("moveIndicatorToFrame:withAnimated:")]

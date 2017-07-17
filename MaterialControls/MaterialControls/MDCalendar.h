@@ -73,5 +73,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) NSMutableDictionary *titleColors;
 - (void)reloadData;
 - (void) overrideSelectedCellColor:(UIColor*) color;
+- (void)setSelectedDate:(NSDate *)selectedDate;
 @end
 NS_ASSUME_NONNULL_END

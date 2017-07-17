@@ -95,6 +95,10 @@
     self.calendar.maximumDate = maximumDate;
 }
 
+- (void) setSelectedDate:(NSDate*)date {
+    [self.calendar setSelectedDate:date];
+}
+
 - (void)layoutSubviews {
   UIInterfaceOrientation orientation =
       [[UIApplication sharedApplication] statusBarOrientation];

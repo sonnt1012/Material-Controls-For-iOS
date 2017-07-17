@@ -34,6 +34,7 @@
 - (void) setCalendarHeaderBackgroundColor:(UIColor*)color;
 - (void) setCalendarHeaderDayLabelBackgroundColor:(UIColor*)color;
 - (void) setPickedDayColor:(UIColor*)color;
+- (void) setSelectedDate:(NSDate*)date;
 @end
 
 #endif

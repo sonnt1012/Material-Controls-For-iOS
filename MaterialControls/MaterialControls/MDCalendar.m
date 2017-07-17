@@ -462,7 +462,7 @@
 
 - (void)setSelectedDate:(NSDate *)selectedDate {
   NSIndexPath *selectedIndexPath = [self indexPathForDate:selectedDate];
-  if (![_selectedDate mdIsEqualToDateForDay:selectedDate]) {
+  if (![_selectedDate mdIsEqualToDateForDay:selectedDate] && ([selectedDate compare:_maximumDate] == NSOrderedSame || [selectedDate compare:_maximumDate] == NSOrderedDescending)) {
     NSIndexPath *currentIndex =
         [_collectionView indexPathsForSelectedItems].lastObject;
     [_collectionView deselectItemAtIndexPath:currentIndex animated:NO];

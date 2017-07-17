@@ -79,6 +79,22 @@
     [[self calendar] overrideSelectedCellColor:color];
 }
 
+- (NSDate*)minimumDate {
+    return self.calendar.minimumDate;
+}
+
+- (void)setMinimumDate:(NSDate *)minimumDate {
+    self.calendar.minimumDate = minimumDate;
+}
+
+- (NSDate*)maximumDate {
+    return self.calendar.maximumDate;
+}
+
+- (void)setMaximumDate:(NSDate *)maximumDate {
+    self.calendar.maximumDate = maximumDate;
+}
+
 - (void)layoutSubviews {
   UIInterfaceOrientation orientation =
       [[UIApplication sharedApplication] statusBarOrientation];

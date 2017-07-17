@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) NSDictionary <NSNumber*, UIColor*>* backgroundColors UI_APPEARANCE_SELECTOR;
 
 @property(copy, nonatomic) NSDate* minimumDate;
+@property(copy, nonatomic) NSDate* maximumDate;
 
 @property(nonatomic) NSInteger currentYear;
 

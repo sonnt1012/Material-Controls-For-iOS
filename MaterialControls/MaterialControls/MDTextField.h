@@ -100,6 +100,9 @@ IB_DESIGNABLE
 
 @property(nonatomic) UIReturnKeyType returnKeyType;
 @property(nonatomic) UIKeyboardType keyboardType;
+@property(nonatomic) UITextAutocapitalizationType autocapitalizationType;
+@property(nonatomic) UITextAutocorrectionType autocorrectionType;
+@property(nonatomic) UITextSpellCheckingType spellCheckingType;
 
 @property(nonatomic) BOOL hasError;
 @property(nonnull, nonatomic) UIFont *labelsFont;

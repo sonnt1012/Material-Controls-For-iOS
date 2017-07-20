@@ -268,6 +268,14 @@
   self.calendar.minimumDate = minimumDate;
 }
 
+- (NSDate*)maximumDate {
+    return self.calendar.maximumDate;
+}
+
+- (void)setMaximumDate:(NSDate *)maximumDate {
+    self.calendar.maximumDate = maximumDate;
+}
+
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
   UIInterfaceOrientation orientation =
       [[UIApplication sharedApplication] statusBarOrientation];

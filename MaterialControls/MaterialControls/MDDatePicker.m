@@ -67,6 +67,38 @@
   [self setBackgroundColor:self.calendar.backgroundColor];
 }
 
+- (void) setCalendarHeaderBackgroundColor:(UIColor*)color {
+    [[self header] setBackgroundColor:color];
+}
+
+- (void) setCalendarHeaderDayLabelBackgroundColor:(UIColor*)color {
+    [[[self header] labelDayName] setBackgroundColor:color];
+}
+
+- (void) setPickedDayColor:(UIColor*)color {
+    [[self calendar] overrideSelectedCellColor:color];
+}
+
+- (NSDate*)minimumDate {
+    return self.calendar.minimumDate;
+}
+
+- (void)setMinimumDate:(NSDate *)minimumDate {
+    self.calendar.minimumDate = minimumDate;
+}
+
+- (NSDate*)maximumDate {
+    return self.calendar.maximumDate;
+}
+
+- (void)setMaximumDate:(NSDate *)maximumDate {
+    self.calendar.maximumDate = maximumDate;
+}
+
+- (void) setSelectedDate:(NSDate*)date {
+    [self.calendar setSelectedDate:date];
+}
+
 - (void)layoutSubviews {
   UIInterfaceOrientation orientation =
       [[UIApplication sharedApplication] statusBarOrientation];

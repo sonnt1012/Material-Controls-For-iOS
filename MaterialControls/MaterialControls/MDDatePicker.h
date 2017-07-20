@@ -28,6 +28,13 @@
 
 @interface MDDatePicker : UIView
 @property(weak, nonatomic) IBOutlet id<MDCalendarDelegate> delegate;
+@property (nonnull, strong, nonatomic) NSDate *minimumDate;
+@property (nullable, strong, nonatomic) NSDate *maximumDate;
+
+- (void) setCalendarHeaderBackgroundColor:(UIColor*)color;
+- (void) setCalendarHeaderDayLabelBackgroundColor:(UIColor*)color;
+- (void) setPickedDayColor:(UIColor*)color;
+- (void) setSelectedDate:(NSDate*)date;
 @end
 
 #endif

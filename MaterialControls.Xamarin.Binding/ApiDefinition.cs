@@ -159,10 +159,6 @@ namespace MaterialControls
 		[Export("currentDate", ArgumentSemantic.Copy)]
 		NSDate CurrentDate { get; set; }
 
-		// @property (copy, nonatomic) NSDate * selectedDate;
-		[Export("selectedDate", ArgumentSemantic.Copy)]
-		NSDate SelectedDate { get; set; }
-
 		// @property (copy, nonatomic) NSDate * currentMonth;
 		[Export("currentMonth", ArgumentSemantic.Copy)]
 		NSDate CurrentMonth { get; set; }
@@ -183,7 +179,11 @@ namespace MaterialControls
 		[Export("titleColors", ArgumentSemantic.Retain)]
 		NSMutableDictionary TitleColors { get; set; }
 
-		// -(void)reloadData;
+		// -(void)overrideSelectedCellColor:(UIColor*) color;
+		[Export("overrideSelectedCellColor:")]
+		void OverrideSelectedCellColor(UIColor color);
+
+        // -(void)reloadData;
 		[Export("reloadData")]
 		void ReloadData();
 	}
@@ -284,7 +284,7 @@ namespace MaterialControls
 
 		//@property(nonatomic) MDCalendar* calendar;
 		[Export("calendar")]
-		MDCalendar calendar { get; set; }
+		MDCalendar Calendar { get; set; }
 
 		//@property(nonatomic) MDButton* buttonOk;
 		[Export("buttonOk")]

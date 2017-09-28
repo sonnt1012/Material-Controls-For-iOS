@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		50A45BDA1F7D12640001665F /* fat */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 50A45BDD1F7D12640001665F /* Build configuration list for PBXAggregateTarget "fat" */;
+			buildPhases = (
+				50A45BDE1F7D12760001665F /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = fat;
+			productName = fat;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		925465A41DAFB4FF00D4E20D /* MDSuggestPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210862F1DAFB279005BECA4 /* MDSuggestPopupView.m */; };
 		925465A51DAFB4FF00D4E20D /* MDSuggestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921086311DAFB279005BECA4 /* MDSuggestTableView.m */; };
@@ -446,6 +460,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "FPT Software";
 				TargetAttributes = {
+					50A45BDA1F7D12640001665F = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = XTR57D5U58;
+						ProvisioningStyle = Automatic;
+					};
 					92D48EDF1DAF7412007CF4EC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 854MF4G8EF;
@@ -466,9 +485,26 @@
 			projectRoot = "";
 			targets = (
 				92D48EDF1DAF7412007CF4EC /* MaterialControls */,
+				50A45BDA1F7D12640001665F /* fat */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50A45BDE1F7D12760001665F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=true\n\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/iphoneuniversal\"\nOUTPUT_DIR=\"${PROJECT_DIR}/Output/iphoneuniversal/\"\n\nrm -rf \"$OUTPUT_DIR\"\nmkdir -p \"$OUTPUT_DIR\"\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\"\n\n######################\n# Build Frameworks\n######################\n\nfunction build() {\n    xcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme $1 -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n    xcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme $1 -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n    \n    FRAMEWORK_NAME=\"$1\"\n    SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${FRAMEWORK_NAME}.a\"\n    DEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${FRAMEWORK_NAME}.a\"\n    FRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}\"\n    \n    mkdir -p \"${FRAMEWORK}\"\n    mkdir -p \"${OUTPUT_DIR}/${FRAMEWORK_NAME}\"\n    mkdir -p \"${OUTPUT_DIR}/${FRAMEWORK_NAME}/include\"\n    \n    ######################\n    # Make an universal binary\n    ######################\n    \n    lipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${FRAMEWORK}/lib${FRAMEWORK_NAME}.a\" | echo\n    \n    ######################\n    # On Release, copy the result to release directory\n    ######################\n    \n    cp -r \"${FRAMEWORK}/\" \"${OUTPUT_DIR}/${FRAMEWORK_NAME}\"\n    cp -r \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include/${FRAMEWORK_NAME}/\" \"${OUTPUT_DIR}/${FRAMEWORK_NAME}/include\"\n    \n}\n\nframeworks=(MaterialControls)\nfor framework in \"${frameworks[@]}\"\ndo\nbuild $framework\ndone\n\nif [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\nopen \"${OUTPUT_DIR}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92D48EDC1DAF7412007CF4EC /* Sources */ = {
@@ -523,6 +559,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		50A45BDB1F7D12640001665F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XTR57D5U58;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50A45BDC1F7D12640001665F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XTR57D5U58;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		92D48EE71DAF7412007CF4EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,7 +619,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -606,6 +660,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -634,6 +689,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50A45BDD1F7D12640001665F /* Build configuration list for PBXAggregateTarget "fat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50A45BDB1F7D12640001665F /* Debug */,
+				50A45BDC1F7D12640001665F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92D48EDB1DAF7412007CF4EC /* Build configuration list for PBXProject "MaterialControls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

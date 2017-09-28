@@ -17,3 +17,5 @@ MaterialControls/sharpie-build
 **/[Cc]omponents/*
 
 *.userprefs
+MaterialControls/Output
+xcuserdata

@@ -36,7 +36,7 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 				pickerDialog = new MDDatePickerDialog();
 				pickerDialog.Delegate = new DatePickerDialogDelegate(TextField);
 			}
-
+			pickerDialog.Calendar.OverrideSelectedCellColor(UIColor.Red);
 			pickerDialog.Show();
 		}
 	}

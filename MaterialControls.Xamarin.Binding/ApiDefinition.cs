@@ -268,7 +268,39 @@ namespace MaterialControls
 
 		// @property(weak, nonatomic, nullable) id<MDDatePickerDialogDelegate> delegate;
 		[Wrap("WeakDelegate")]
-		MDDatePickerDialogDelegate Delegate { get; set; }
+        MDDatePickerDialogDelegate Delegate { get; set; }
+
+		// @property(strong, nonatomic) UIFont* buttonFont UI_APPEARANCE_SELECTOR;
+		[Export("buttonFont", ArgumentSemantic.Strong)]
+		UIFont ButtonFont { get; set; }
+
+		// @property(nonatomic) NSDateFormatter* dateFormatter;
+		[Export("dateFormatter")]
+		NSDateFormatter DateFormatter { get; set; }
+
+		//@property(nonatomic) MDCalendarDateHeader* header;
+		[Export("header")]
+		MDCalendarDateHeader Header { get; set; }
+
+		//@property(nonatomic) MDCalendar* calendar;
+		[Export("calendar")]
+		MDCalendar calendar { get; set; }
+
+		//@property(nonatomic) MDButton* buttonOk;
+		[Export("buttonOk")]
+		MDButton ButtonOk { get; set; }
+
+		//@property(nonatomic) MDButton* buttonCancel;
+		[Export("buttonCancel")]
+		MDButton ButtonCancel { get; set; }
+
+		//@property(nonatomic) NSString* okTitle;
+		[Export("okTitle")]
+		string OkTitle { get; set; }
+
+		//@property(nonatomic) NSString* cancelTitle;
+		[Export("cancelTitle")]
+		string CancelTitle { get; set; }
 
 		// -(void)show;
 		[Export("show")]
@@ -956,6 +988,14 @@ namespace MaterialControls
 		[Export("initWithHour:andWithMinute:")]
 		IntPtr Constructor(nint hour, nint minute);
 
+		// -(instancetype)initWithClockMode:(MDClockMode)clockMode;
+		[Export("initWithClockMode:")]
+		IntPtr Constructor(MDClockMode clockMode);
+
+		// -(instancetype)initWithHour:(NSInteger)hour andWithMinute:(NSInteger)minute andWithClockMode:(MDClockMode)clockMode;
+        [Export("initWithHour:andWithMinute:andWithClockMode:")]
+		IntPtr Constructor(nint hour, nint minute, MDClockMode clockMode);
+
 		// @property (nonatomic) id<MDTimePickerDialogDelegate> delegate;
 		[Export("delegate")]
 		[NullAllowed]
@@ -996,6 +1036,46 @@ namespace MaterialControls
 		// @property (nonatomic) UIFont * buttonFont;
 		[Export("buttonFont")]
 		UIFont ButtonFont { get; set; }
+
+		// @property(nonatomic, strong) UIColor *titleColor;
+		[Export("titleColor",ArgumentSemantic.Strong)]
+		UIColor TitleColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor *titleSelectedColor;
+		[Export("titleSelectedColor",ArgumentSemantic.Strong)]
+		UIColor TitleSelectedColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* headerTextColor;
+		[Export("headerTextColor",ArgumentSemantic.Strong)]
+		UIColor HeaderTextColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* headerBackgroundColor;
+		[Export("headerBackgroundColor",ArgumentSemantic.Strong)]
+		UIColor HeaderBackgroundColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* selectionColor;
+		[Export("selectionColor",ArgumentSemantic.Strong)]
+		UIColor SelectionColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* selectionCenterColor;
+		[Export("selectionCenterColor",ArgumentSemantic.Strong)]
+		UIColor SelectionCenterColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* backgroundPopupColor;
+		[Export("backgroundPopupColor",ArgumentSemantic.Strong)]
+		UIColor BackgroundPopupColor { get; set; }
+
+		// @property(nonatomic, strong) UIColor* backgroundClockColor;
+		[Export("backgroundClockColor",ArgumentSemantic.Strong)]
+		UIColor BackgroundClockColor { get; set; }
+
+		// @property(nonatomic) MDClockMode clockMode;
+		[Export("clockMode")]
+		MDClockMode ClockMode { get; set; }
+
+		// @property(nonatomic, assign) MDTimePickerTheme theme;
+        [Export("theme",ArgumentSemantic.Assign)]
+		MDTimePickerTheme Theme { get; set; }
 
 		// -(void)show;
 		[Export("show")]

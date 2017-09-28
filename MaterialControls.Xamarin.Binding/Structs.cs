@@ -2,8 +2,47 @@
 using ObjCRuntime;
 
 namespace MaterialControls {
+    
+    [Native]
+    public enum MDTimePickerTheme : long {
+        Light = 1,
+        Dark,
+    }
+	
+    [Native]
+    public enum MDClockMode : long {
+        MDClockMode12H,
+        MDClockMode24H
+    }
 
-	public enum MDButtonType : uint {
+    [Native]
+    public enum MDSliderThumbState : long {
+        MDSliderThumbStateNormal,
+        MDSliderThumbStateFocused,
+        MDSliderThumbStateDisabled
+    }
+
+    [Native]
+    public enum MDTextFieldViewState : long {
+        MDTextFieldViewStateNormal,
+        MDTextFieldViewStateHighlighted,
+        MDTextFieldViewStateError,
+        MDTextFieldViewStateDisabled
+    }
+
+    [Native]
+    public enum MDGravity : long {
+        MDGravityNone = 0,
+        MDGravityTop = 1 << 0,
+        MDGravityBottom = 1 << 1,
+        MDGravityLeft = 1 << 2,
+        MDGravityRight = 1 << 3,
+        MDGravityCenterHorizontal = 1 << 4,
+        MDGravityCenterVertical = 1 << 5,
+    }
+
+    [Native]
+    public enum MDButtonType : long {
 		Raised,
 		Flat,
 		FloatingAction
@@ -53,6 +92,8 @@ namespace MaterialControls {
 		Buffer,
 		QueryIndeterminateAndDeterminate
 	}
+
+
 
 	public enum ViewState : uint {
 		NORMAL,

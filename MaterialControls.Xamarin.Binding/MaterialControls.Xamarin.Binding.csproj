@@ -46,7 +46,7 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="libMaterialControls.a">
+    <NativeReference Include="frameworks\libMaterialControls.a">
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

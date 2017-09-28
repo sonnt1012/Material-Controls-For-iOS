@@ -13,7 +13,7 @@ namespace MaterialControls.Xamarin.Sample.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<MainViewModel>();
+			RegisterAppStart<MainViewModel>();
         }
     }
 }

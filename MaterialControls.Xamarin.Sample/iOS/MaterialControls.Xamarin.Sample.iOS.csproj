@@ -22,8 +22,6 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchProfiling>true</MtouchProfiling>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -37,8 +35,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -54,8 +50,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -75,8 +69,6 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchProfiling>true</MtouchProfiling>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -126,16 +118,6 @@
     <Reference Include="MvvmCross.Plugins.File.iOS">
       <HintPath>..\packages\MvvmCross.Plugin.File.4.3.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\MaterialControls.Xamarin.Binding\MaterialControls.Xamarin.Binding.csproj">
-      <Project>{9D13BDE0-6188-4A23-8B18-5DE8A8452DE5}</Project>
-      <Name>MaterialControls.Xamarin.Binding</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core\MaterialControls.Xamarin.Sample.csproj">
-      <Project>{7D3B3548-68F5-4765-A4F5-B44AFA5B2BC0}</Project>
-      <Name>MaterialControls.Xamarin.Sample</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -213,6 +195,16 @@
     <Compile Include="Views\ToastView.designer.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MaterialControls.Xamarin.Binding\MaterialControls.Xamarin.Binding.csproj">
+      <Project>{9D13BDE0-6188-4A23-8B18-5DE8A8452DE5}</Project>
+      <Name>MaterialControls.Xamarin.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\MaterialControls.Xamarin.Sample.csproj">
+      <Project>{7D3B3548-68F5-4765-A4F5-B44AFA5B2BC0}</Project>
+      <Name>MaterialControls.Xamarin.Sample</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

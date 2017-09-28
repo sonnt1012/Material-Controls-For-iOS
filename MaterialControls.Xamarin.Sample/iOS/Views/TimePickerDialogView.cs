@@ -35,7 +35,7 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 		partial void ButtonClicked (NSObject sender)
 		{
 			if(TimePickerDialog ==null) {
-				TimePickerDialog = new MDTimePickerDialog();
+				TimePickerDialog = new MDTimePickerDialog(MDClockMode.MDClockMode12H);
 				TimePickerDialog.Delegate = new TimePickerDelegate(TimeTextField);
 			}
 			TimePickerDialog.Show();

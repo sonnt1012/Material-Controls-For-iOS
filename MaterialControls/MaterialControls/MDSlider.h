@@ -23,9 +23,17 @@
 #import <UIKit/UIKit.h>
 #define kMDAnimationDuration .2f
 
+typedef enum MDSliderValueLabelMode {
+    MDSliderValueLabelModeHidden,
+    MDSliderValueLabelModeAlways,
+    MDSliderValueLabelModeFocusedOnly
+} MDSliderValueLabelMode;
+
 NS_ASSUME_NONNULL_BEGIN
 IB_DESIGNABLE
 @interface MDSlider : UIControl
+
+
 
 @property(nonatomic) IBInspectable CGFloat value;
 @property(nonatomic) IBInspectable CGFloat maximumValue;
@@ -40,7 +48,8 @@ IB_DESIGNABLE
 @property(nullable, nonatomic) IBInspectable UIImage *rightImage;
 @property(nonatomic, getter=isEnabled) IBInspectable BOOL enabled;
 @property(nonatomic) IBInspectable CGFloat step;
-@property(nonatomic) IBInspectable BOOL enabledValueLabel;
+@property(nonatomic) MDSliderValueLabelMode valueLabelMode;
+@property(nonatomic) IBInspectable UIFont *valueLabelFont;
 @property(nonatomic) IBInspectable NSUInteger precision;
 @property(nonatomic, assign) IBInspectable CGFloat trackHeight;
 @property(nonatomic, assign) IBInspectable BOOL isTrackViewRounded;

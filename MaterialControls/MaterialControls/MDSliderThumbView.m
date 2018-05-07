@@ -59,9 +59,16 @@
   _node.translatesAutoresizingMaskIntoConstraints = NO;
   viewsDictionary = NSDictionaryOfVariableBindings(_bubble, _node);
 
-  metricsDictionary = @{
-    @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius)
-  };
+    if (_bubbleMode == MDSliderValueLabelModeAlways) {
+        metricsDictionary = @{
+                              @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius + 4.0f)
+                              };
+    }
+    else {
+        metricsDictionary = @{
+                              @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius)
+                              };
+    }
 
   [UIViewHelper addConstraintWithItem:_node
                             attribute:NSLayoutAttributeCenterY
@@ -108,6 +115,31 @@
                                toView:self];
 }
 
+- (void)setBubbleMode:(MDSliderValueLabelMode)bubbleMode {
+    if (_bubbleMode == bubbleMode) return;
+    _bubbleMode = bubbleMode;
+    if (bubbleMode == MDSliderValueLabelModeHidden) {
+        [self setEnableBubble:NO];
+    }
+    else {
+        if (_bubbleMode == MDSliderValueLabelModeAlways) {
+            metricsDictionary = @{
+                                  @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius + 4.0f)
+                                  };
+        }
+        else {
+            metricsDictionary = @{
+                                  @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius)
+                                  };
+        }
+        [self setEnableBubble:YES];
+        if (_state == MDSliderThumbStateFocused
+            || bubbleMode == MDSliderValueLabelModeAlways) {
+            [self showBubble];
+        }
+    }
+}
+
 - (void)focused:(void (^)(BOOL finished))completion {
   _state = MDSliderThumbStateFocused;
   [UIView animateWithDuration:kMDAnimationDuration
@@ -128,7 +160,9 @@
   [_node.layer addAnimation:animation forKey:@"cornerRadius"];
 
   if (_enableBubble) {
-    [self showBubble];
+      if (_bubbleMode == MDSliderValueLabelModeFocusedOnly) {
+          [self showBubble];
+      }
     [self hideNode];
   }
 }
@@ -153,7 +187,9 @@
   [_node.layer addAnimation:animation forKey:@"cornerRadius"];
 
   if (_enableBubble) {
-    [self hideBubble];
+      if (_bubbleMode != MDSliderValueLabelModeAlways) {
+          [self hideBubble];
+      }
     [self showNode];
   }
 }

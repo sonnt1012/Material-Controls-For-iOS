@@ -90,6 +90,7 @@
     _trackHeight = 2.0f;
     _isTrackViewRounded = NO;
     _isTickMarksVisible = YES;
+    _valueLabelMode = MDSliderValueLabelModeHidden;
 }
 
 - (void)setupContent {
@@ -469,13 +470,20 @@
   tickMarksView.step = step;
 }
 
-- (void)setEnabledValueLabel:(BOOL)enabledValueLabel {
-  _enabledValueLabel = enabledValueLabel;
-  if (_enabledValueLabel) {
-    [thumbView setEnableBubble:YES];
-  } else {
-    [thumbView setEnableBubble:NO];
-  }
+-(void)setValueLabelMode:(MDSliderValueLabelMode)valueLabelMode
+{
+    _valueLabelMode = valueLabelMode;
+    if (thumbView != nil) {
+        thumbView.bubbleMode = valueLabelMode;
+    }
+}
+
+-(void)setValueLabelFont:(UIFont *)valueLabelFont
+{
+    _valueLabelFont = valueLabelFont;
+    if (valueLabelFont != nil && thumbView != nil) {
+        [thumbView.bubble setFont:valueLabelFont];
+    }
 }
 
 - (void)setValue:(CGFloat)value {

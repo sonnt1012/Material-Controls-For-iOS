@@ -23,6 +23,8 @@
 #import "SliderViewController.h"
 
 @interface SliderViewController ()
+@property (weak, nonatomic) IBOutlet MDSlider *discreteSlider;
+@property (weak, nonatomic) IBOutlet MDSlider *continuousSlider;
 
 @end
 
@@ -66,6 +68,8 @@
       [NSString stringWithFormat:@"%.f", _discreteSilder.value];
   _continuousSliderValue.text =
       [NSString stringWithFormat:@"%.01f", _mdSlider.value];
+    _discreteSilder.valueLabelMode = MDSliderValueLabelModeFocusedOnly;
+    _continuousSlider.valueLabelMode = MDSliderValueLabelModeAlways;
 }
 
 - (void)didReceiveMemoryWarning {

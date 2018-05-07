@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) MDSliderThumbState state;
 @property(nonatomic, weak) MDSlider *slider;
 @property(nonatomic) BOOL enableBubble;
+@property(nonatomic, assign) MDSliderValueLabelMode bubbleMode;
 
 - (instancetype)initWithMDSlider:(MDSlider *)MDSlider;
 - (void)focused:(nullable void (^)(BOOL finished))completion;

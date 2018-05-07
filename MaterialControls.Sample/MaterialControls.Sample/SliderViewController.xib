@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderViewController">
             <connections>
+                <outlet property="continuousSlider" destination="raB-nB-MIj" id="VzP-eQ-7yM"/>
                 <outlet property="continuousSliderValue" destination="5OQ-72-5oK" id="aa2-wy-GsQ"/>
                 <outlet property="discreteSilder" destination="wrl-XL-ukR" id="XvD-hK-oBK"/>
+                <outlet property="discreteSlider" destination="wrl-XL-ukR" id="Bac-2E-TEX"/>
                 <outlet property="discreteSliderValue" destination="gDa-Jx-t4M" id="52o-QU-FbP"/>
                 <outlet property="mdSlider" destination="raB-nB-MIj" id="KbE-Ma-Xui"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

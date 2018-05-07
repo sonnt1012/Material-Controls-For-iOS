@@ -70,6 +70,7 @@
       [NSString stringWithFormat:@"%.01f", _mdSlider.value];
     _discreteSilder.valueLabelMode = MDSliderValueLabelModeFocusedOnly;
     _continuousSlider.valueLabelMode = MDSliderValueLabelModeAlways;
+    _continuousSlider.isThumbVisibleOnFocused = YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) MDSlider *slider;
 @property(nonatomic) BOOL enableBubble;
 @property(nonatomic, assign) MDSliderValueLabelMode bubbleMode;
+@property(nonatomic, assign) BOOL isNodeVisibleOnFocused;
 
 - (instancetype)initWithMDSlider:(MDSlider *)MDSlider;
 - (void)focused:(nullable void (^)(BOOL finished))completion;

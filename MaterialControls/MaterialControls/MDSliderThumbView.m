@@ -61,7 +61,7 @@
 
     if (_bubbleMode == MDSliderValueLabelModeAlways) {
         metricsDictionary = @{
-                              @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius + 4.0f)
+                              @"bubblePaddingBottom" : @(kMDThumbRadius + kMDThumbForcusedRadius + 6.0f)
                               };
     }
     else {
@@ -140,6 +140,19 @@
     }
 }
 
+- (void)setIsNodeVisibleOnFocused:(BOOL)isNodeVisibleOnFocused {
+    if (_isNodeVisibleOnFocused == isNodeVisibleOnFocused) return;
+    _isNodeVisibleOnFocused = isNodeVisibleOnFocused;
+    if (_state == MDSliderThumbStateFocused) {
+        if (_isNodeVisibleOnFocused) {
+            [self showNode];
+        }
+        else {
+            [self hideNode];
+        }
+    }
+}
+
 - (void)focused:(void (^)(BOOL finished))completion {
   _state = MDSliderThumbStateFocused;
   [UIView animateWithDuration:kMDAnimationDuration
@@ -163,7 +176,10 @@
       if (_bubbleMode == MDSliderValueLabelModeFocusedOnly) {
           [self showBubble];
       }
-    [self hideNode];
+      if (NO == _isNodeVisibleOnFocused)
+      {
+          [self hideNode];
+      }
   }
 }
 
@@ -190,7 +206,9 @@
       if (_bubbleMode != MDSliderValueLabelModeAlways) {
           [self hideBubble];
       }
-    [self showNode];
+      if (_node.hidden){
+          [self showNode];
+      }
   }
 }
 

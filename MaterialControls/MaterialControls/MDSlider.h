@@ -50,6 +50,7 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable CGFloat step;
 @property(nonatomic) MDSliderValueLabelMode valueLabelMode;
 @property(nonatomic) IBInspectable UIFont *valueLabelFont;
+@property(nonatomic, assign) IBInspectable BOOL isThumbVisibleOnFocused;
 @property(nonatomic) IBInspectable NSUInteger precision;
 @property(nonatomic, assign) IBInspectable CGFloat trackHeight;
 @property(nonatomic, assign) IBInspectable BOOL isTrackViewRounded;

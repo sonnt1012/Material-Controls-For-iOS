@@ -91,6 +91,7 @@
     _isTrackViewRounded = NO;
     _isTickMarksVisible = YES;
     _valueLabelMode = MDSliderValueLabelModeHidden;
+    _isThumbVisibleOnFocused = NO;
 }
 
 - (void)setupContent {
@@ -98,6 +99,8 @@
     trackView.layer.cornerRadius = _isTrackViewRounded ? _trackHeight / 2 : 0.0f;
     trackView.layer.masksToBounds = true;
   thumbView = [[MDSliderThumbView alloc] initWithMDSlider:self];
+    thumbView.bubbleMode = _valueLabelMode;
+    thumbView.isNodeVisibleOnFocused = _isThumbVisibleOnFocused;
   intensityView = [[UIView alloc] init];
   tickMarksView = [[MDSliderTickMarksView alloc] init];
     tickMarksView.hidden = !_isTickMarksVisible;
@@ -589,6 +592,13 @@
     _isTickMarksVisible = isTickMarksVisible;
     if (tickMarksView != nil) {
         tickMarksView.hidden = !isTickMarksVisible;
+    }
+}
+
+- (void)setIsThumbVisibleOnFocused:(BOOL)isThumbVisibleOnFocused {
+    _isThumbVisibleOnFocused = isThumbVisibleOnFocused;
+    if (thumbView != nil) {
+        thumbView.isNodeVisibleOnFocused = isThumbVisibleOnFocused;
     }
 }
 

@@ -59,6 +59,7 @@
 
 - (instancetype)init {
   if (self = [super init]) {
+       [self setupDefaultValues];
   }
 
   return self;
@@ -66,6 +67,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if (self = [super initWithCoder:aDecoder]) {
+       [self setupDefaultValues];
     [self setupContent];
     [self layoutContent];
   }
@@ -75,6 +77,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
+      [self setupDefaultValues];
     [self setupContent];
     [self layoutContent];
   }
@@ -82,12 +85,21 @@
   return self;
 }
 
+- (void)setupDefaultValues
+{
+    _trackHeight = 2.0f;
+    _isTrackViewRounded = NO;
+    _isTickMarksVisible = YES;
+}
+
 - (void)setupContent {
   trackView = [[UIView alloc] init];
-    _trackHeight = 2.0f;
+    trackView.layer.cornerRadius = _isTrackViewRounded ? _trackHeight / 2 : 0.0f;
+    trackView.layer.masksToBounds = true;
   thumbView = [[MDSliderThumbView alloc] initWithMDSlider:self];
   intensityView = [[UIView alloc] init];
   tickMarksView = [[MDSliderTickMarksView alloc] init];
+    tickMarksView.hidden = !_isTickMarksVisible;
   leftIcon = [[MDSliderIcon alloc] init];
   rightIcon = [[MDSliderIcon alloc] init];
   placeHolder = [[UIView alloc] init];
@@ -549,9 +561,26 @@
 }
 
 - (void)setTrackHeight:(CGFloat)trackHeight {
-    _trackHeight = trackHeight;
-    if (trackHeightConstraint != NULL) {
-        trackHeightConstraint.constant = trackHeight;
+    _trackHeight = trackHeight < 0.0f ? 0.0f : trackHeight;
+    if (trackHeightConstraint != nil) {
+        trackHeightConstraint.constant = _trackHeight;
+    }
+    if (_isTrackViewRounded && trackView != nil) {
+        trackView.layer.cornerRadius = _trackHeight / 2;
+    }
+}
+
+- (void)setIsTrackViewRounded:(BOOL)isTrackViewRounded {
+    _isTrackViewRounded = isTrackViewRounded;
+    if (trackView != nil) {
+        trackView.layer.cornerRadius = _isTrackViewRounded ? _trackHeight / 2 : 0.0f;
+    }
+}
+
+- (void)setIsTickMarksVisible:(BOOL)isTickMarksVisible {
+    _isTickMarksVisible = isTickMarksVisible;
+    if (tickMarksView != nil) {
+        tickMarksView.hidden = !isTickMarksVisible;
     }
 }
 

@@ -102,8 +102,10 @@
                                     <color key="value" red="1" green="0.041036519703868346" blue="0.010226881207028415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
-                                    <real key="value" value="2"/>
+                                    <real key="value" value="4"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTrackViewRounded" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTickMarksVisible" value="NO"/>
                             </userDefinedRuntimeAttributes>
                             <variation key="default">
                                 <mask key="constraints">

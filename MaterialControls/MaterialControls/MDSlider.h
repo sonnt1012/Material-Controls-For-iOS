@@ -43,5 +43,7 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable BOOL enabledValueLabel;
 @property(nonatomic) IBInspectable NSUInteger precision;
 @property(nonatomic, assign) IBInspectable CGFloat trackHeight;
+@property(nonatomic, assign) IBInspectable BOOL isTrackViewRounded;
+@property(nonatomic, assign) IBInspectable BOOL isTickMarksVisible;
 @end
 NS_ASSUME_NONNULL_END

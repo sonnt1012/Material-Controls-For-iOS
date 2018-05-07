@@ -42,6 +42,6 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable CGFloat step;
 @property(nonatomic) IBInspectable BOOL enabledValueLabel;
 @property(nonatomic) IBInspectable NSUInteger precision;
-
+@property(nonatomic, assign) IBInspectable CGFloat trackHeight;
 @end
 NS_ASSUME_NONNULL_END

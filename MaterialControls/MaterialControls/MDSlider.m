@@ -31,7 +31,6 @@
 
 #define kMDTrackPadding 16
 #define kMDTrackPaddingWithLabel 24
-#define kMDTrackWidth 2
 
 #define kMDTrackBackgroundColor @"#00000042"
 #define kMDDisabledColor @"#00000021"
@@ -54,6 +53,7 @@
   NSArray *constraintsArray;
 
   float rawValue;
+    NSLayoutConstraint *trackHeightConstraint;
 }
 @dynamic enabled;
 
@@ -84,6 +84,7 @@
 
 - (void)setupContent {
   trackView = [[UIView alloc] init];
+    _trackHeight = 2.0f;
   thumbView = [[MDSliderThumbView alloc] initWithMDSlider:self];
   intensityView = [[UIView alloc] init];
   tickMarksView = [[MDSliderTickMarksView alloc] init];
@@ -137,13 +138,14 @@
 
   metricsDictionary = @{
     @"trackPadding" : @kMDTrackPadding,
-    @"labeledPadding" : @kMDTrackPaddingWithLabel,
-    @"trackWidth" : @kMDTrackWidth
+    @"labeledPadding" : @kMDTrackPaddingWithLabel
   };
 
+    trackHeightConstraint = [trackView.heightAnchor constraintEqualToConstant:_trackHeight];
+    trackHeightConstraint.active = true;
   [UIViewHelper
       addConstraintsWithVisualFormat:
-          @"V:|-(>=trackPadding)-[trackView(trackWidth)]-(>=trackPadding)-|"
+          @"V:|-(>=trackPadding)-[trackView]-(>=trackPadding)-|"
                              options:0
                              metrics:metricsDictionary
                                views:viewsDictionary
@@ -377,7 +379,7 @@
       break;
     }
 
-    thumbRadius += kMDTrackWidth;
+    thumbRadius += _trackHeight;
 
     UIBezierPath *circlePath = [UIBezierPath
         bezierPathWithRect:CGRectMake(
@@ -544,6 +546,13 @@
 - (void)setPrecision:(NSUInteger)precision {
   _precision = precision;
   thumbView.bubble.precision = precision;
+}
+
+- (void)setTrackHeight:(CGFloat)trackHeight {
+    _trackHeight = trackHeight;
+    if (trackHeightConstraint != NULL) {
+        trackHeightConstraint.constant = trackHeight;
+    }
 }
 
 #pragma mark touch events

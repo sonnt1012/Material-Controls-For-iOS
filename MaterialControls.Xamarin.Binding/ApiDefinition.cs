@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Drawing;
-
-using UIKit;
+using CoreAnimation;
+using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
-using CoreGraphics;
-using System.ComponentModel;
-using CoreAnimation;
+using UIKit;
 
 namespace MaterialControls
 {
@@ -505,9 +502,32 @@ namespace MaterialControls
 		[Export("step")]
 		float Step { get; set; }
 
-		// @property (nonatomic) BOOL enabledValueLabel;
-		[Export("enabledValueLabel")]
-		bool EnabledValueLabel { get; set; }
+		//// @property (nonatomic) BOOL enabledValueLabel;
+		//[Export("enabledValueLabel")]
+		//bool EnabledValueLabel { get; set; }
+        //@property(nonatomic) MDSliderValueLabelMode valueLabelMode;
+        [Export("valueLabelMode")]
+        MDSliderValueLabelMode ValueLabelMode { get; set; }
+
+        //@property(nonatomic) UIFont *valueLabelFont;
+        [Export("valueLabelFont")]
+        UIFont ValueLabelFont { get; set; }
+
+        //@property(nonatomic, assign) BOOL isThumbVisibleOnFocused;
+        [Export("isThumbVisibleOnFocused")]
+        bool IsThumbVisibleOnFocused { get; set; }
+
+        //@property(nonatomic, assign) CGFloat trackHeight;
+        [Export("trackHeight")]
+        nfloat TrackHeight { get; set; }
+
+        //@property(nonatomic, assign) BOOL isTickMarksVisible;
+        [Export("isTickMarksVisible")]
+        bool IsTickMarksVisible { get; set; }
+
+        //@property(nonatomic, assign) BOOL isTrackViewRounded;
+        [Export("isTrackViewRounded")]
+        bool IsTrackViewRounded { get; set; }
 
 		// @property (nonatomic) NSUInteger precision;
 		[Export("precision")]

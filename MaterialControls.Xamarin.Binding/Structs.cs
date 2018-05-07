@@ -123,5 +123,12 @@ namespace MaterialControls {
 		Bold = 1,
 		Italic = 2
 	}
+
+    [Native]
+    public enum MDSliderValueLabelMode: long {
+        Hidden,
+        Always,
+        FocusedOnly
+    }
 }
 

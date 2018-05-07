@@ -1,6 +1,6 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -31,9 +31,24 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 
         void ReleaseDesignerOutlets ()
         {
+            if (FlatButton != null) {
+                FlatButton.Dispose ();
+                FlatButton = null;
+            }
+
+            if (FloatingActionButton != null) {
+                FloatingActionButton.Dispose ();
+                FloatingActionButton = null;
+            }
+
             if (Label != null) {
                 Label.Dispose ();
                 Label = null;
+            }
+
+            if (RaisedButton != null) {
+                RaisedButton.Dispose ();
+                RaisedButton = null;
             }
         }
     }

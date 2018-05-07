@@ -1,6 +1,6 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -39,14 +39,29 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 
         void ReleaseDesignerOutlets ()
         {
+            if (CustomSwitch != null) {
+                CustomSwitch.Dispose ();
+                CustomSwitch = null;
+            }
+
             if (CustomSwitchStatus != null) {
                 CustomSwitchStatus.Dispose ();
                 CustomSwitchStatus = null;
             }
 
+            if (DefaultSwitch != null) {
+                DefaultSwitch.Dispose ();
+                DefaultSwitch = null;
+            }
+
             if (DefaultSwitchStatus != null) {
                 DefaultSwitchStatus.Dispose ();
                 DefaultSwitchStatus = null;
+            }
+
+            if (DisabledSwitch != null) {
+                DisabledSwitch.Dispose ();
+                DisabledSwitch = null;
             }
 
             if (DisabledSwitchStatus != null) {

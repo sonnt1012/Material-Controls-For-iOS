@@ -1,9 +1,4 @@
-﻿
-using System;
-
-using Foundation;
-using MaterialControls.Xamarin.Sample.Core.ViewModels;
-using UIKit;
+﻿using MaterialControls.Xamarin.Sample.Core.ViewModels;
 
 namespace MaterialControls.Xamarin.Sample.iOS.Views
 {
@@ -17,7 +12,7 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 		{
 			// Releases the view if it doesn't have a superview.
 			base.DidReceiveMemoryWarning ();
-			
+
 			// Release any cached data, images, etc that aren't in use.
 		}
 
@@ -26,6 +21,7 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+			continuousSlider.ValueLabelMode = MDSliderValueLabelMode.Always;
 		}
 	}
 }

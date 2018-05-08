@@ -449,18 +449,21 @@ namespace MaterialControls
 	[BaseType(typeof(UIControl))]
 	interface MDSlider
 	{
+		// -(instancetype)initWithFrame:(CGRect)frame;
+		[Export("initWithFrame:")]
+		IntPtr Constructor(CGRect frame);
 
 		// @property (nonatomic) float value;
 		[Export("value")]
-		float Value { get; set; }
+		nfloat Value { get; set; }
 
 		// @property (nonatomic) float maximumValue;
 		[Export("maximumValue")]
-		float MaximumValue { get; set; }
+		nfloat MaximumValue { get; set; }
 
 		// @property (nonatomic) float minimumValue;
 		[Export("minimumValue")]
-		float MinimumValue { get; set; }
+		nfloat MinimumValue { get; set; }
 
 		// @property (nonatomic) UIColor * thumbOnColor;
 		[Export("thumbOnColor")]
@@ -500,7 +503,7 @@ namespace MaterialControls
 
 		// @property (nonatomic) float step;
 		[Export("step")]
-		float Step { get; set; }
+		nfloat Step { get; set; }
 
 		//// @property (nonatomic) BOOL enabledValueLabel;
 		//[Export("enabledValueLabel")]

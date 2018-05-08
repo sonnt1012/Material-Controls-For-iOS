@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{B8BDEFD6-0CFC-4D75-B91A-8C8D81CA7312}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Views/SliderView.cs">
+    <Files>
+      <File FileName="../MaterialControls.Xamarin.Binding/ApiDefinition.cs" Line="184" Column="25" />
+      <File FileName="iOS/Views/SliderView.cs" Line="24" Column="68" />
+      <File FileName="../MaterialControls.Xamarin.Binding/Structs.cs" Line="131" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.MaterialControls.Xamarin.Sample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D4067EB9-8FB6-4379-ADA8-B22CD9198372" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

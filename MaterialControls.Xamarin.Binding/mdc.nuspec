@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>MaterialControls</id>
+        <version>1.2.3.1-pre</version>
+        <description>Xamarin.iOS Binding Library - MaterialControls</description>
+        <authors>FPT, NAXAM</authors>
+        <owners>FPT Software</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>MaterialControls for iOS</title>
+        <releaseNotes>Add properties to MDSlider</releaseNotes>
+        <summary>Xamarin.iOS Binding Library - MaterialControls</summary>
+        <iconUrl>https://avatars1.githubusercontent.com/u/25535951</iconUrl>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/fptsoftware/materialcontrols</projectUrl>
+        <copyright>Copyright (c) 2017 FPT</copyright>
+        <tags>Xamarin.iOS, MaterialControls</tags>
+        <dependencies>
+        </dependencies>
+    </metadata>
+    <!-- Optional 'files' node -->
+    <files>
+        <file src="MaterialControls.Xamarin.Binding/bin/Release/MaterialControls.Xamarin.Binding.dll" target="lib/Xamarin.iOS/MaterialControls.Xamarin.Binding.dll" />
+    </files>
+</package>

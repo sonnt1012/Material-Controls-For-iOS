@@ -37,7 +37,23 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 				pickerDialog.Delegate = new DatePickerDialogDelegate(TextField);
 			}
 			pickerDialog.Calendar.OverrideSelectedCellColor(UIColor.Red);
+			pickerDialog.MaximumDate = ConvertDateTimeToNSDate(new DateTime(2019,1,1));
+			pickerDialog.CloseWhenClickBackground = true;
 			pickerDialog.Show();
+		}
+
+		public DateTime ConvertNSDateToDateTime(NSDate date)
+		{
+			DateTime newDate = TimeZone.CurrentTimeZone.ToUniversalTime(new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+			return newDate.AddSeconds(date.SecondsSinceReferenceDate).ToLocalTime();
+		}
+
+		public NSDate ConvertDateTimeToNSDate(DateTime date)
+		{
+			DateTime newDate = TimeZone.CurrentTimeZone.ToLocalTime(
+				new DateTime(2001, 1, 1, 0, 0, 0));
+			return NSDate.FromTimeIntervalSinceReferenceDate(
+				(date - newDate).TotalSeconds);
 		}
 	}
 

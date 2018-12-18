@@ -257,9 +257,21 @@ namespace MaterialControls
 		[Export("selectedDate", ArgumentSemantic.Strong)]
 		NSDate SelectedDate { get; set; }
 
+		// @property (nullable,assign, nonatomic) BOOL *useDarkTheme;
+		[Export("useDarkTheme", ArgumentSemantic.Assign)]
+		bool UseDarkTheme { get; set; }
+
+		// @property (nullable,assign, nonatomic) BOOL *closeWhenClickBackground;
+		[Export("closeWhenClickBackground", ArgumentSemantic.Assign)]
+		bool CloseWhenClickBackground { get; set; }
+
 		//@property (nonnull, strong, nonatomic) NSDate *minimumDate;
 		[Export("minimumDate", ArgumentSemantic.Retain)]
 		NSDate MinimumDate { get; set; }
+
+		//@property (nonnull, strong, nonatomic) NSDate *minimumDate;
+		[Export("maximumDate", ArgumentSemantic.Strong)]
+		NSDate MaximumDate { get; set; }
 
 		// @property (nonatomic) id<MDDatePickerDialogDelegate> delegate;
 		[Export("delegate", ArgumentSemantic.Weak)]

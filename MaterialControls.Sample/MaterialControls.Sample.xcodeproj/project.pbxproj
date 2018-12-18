@@ -323,7 +323,7 @@
 				TargetAttributes = {
 					9210855A1DAF9FFF005BECA4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 854MF4G8EF;
+						DevelopmentTeam = 6KRGLYTFWP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -561,11 +561,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 854MF4G8EF;
+				DEVELOPMENT_TEAM = 6KRGLYTFWP;
 				INFOPLIST_FILE = MaterialControls.Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ftp.MaterialControls-Sample";
+				PRODUCT_BUNDLE_IDENTIFIER = net.naxam.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -576,11 +576,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 854MF4G8EF;
+				DEVELOPMENT_TEAM = 6KRGLYTFWP;
 				INFOPLIST_FILE = MaterialControls.Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ftp.MaterialControls-Sample";
+				PRODUCT_BUNDLE_IDENTIFIER = net.naxam.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

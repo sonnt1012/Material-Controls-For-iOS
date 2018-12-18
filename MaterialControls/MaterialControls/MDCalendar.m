@@ -462,20 +462,18 @@
 
 - (void)setSelectedDate:(NSDate *)selectedDate {
   NSIndexPath *selectedIndexPath = [self indexPathForDate:selectedDate];
-  if (![_selectedDate mdIsEqualToDateForDay:selectedDate] && ([selectedDate compare:_maximumDate] == NSOrderedSame || [selectedDate compare:_maximumDate] == NSOrderedDescending)) {
     NSIndexPath *currentIndex =
-        [_collectionView indexPathsForSelectedItems].lastObject;
+    [_collectionView indexPathsForSelectedItems].lastObject;
     [_collectionView deselectItemAtIndexPath:currentIndex animated:NO];
     [self collectionView:_collectionView
-        didDeselectItemAtIndexPath:currentIndex];
+didDeselectItemAtIndexPath:currentIndex];
     [_collectionView selectItemAtIndexPath:selectedIndexPath
                                   animated:NO
                             scrollPosition:UICollectionViewScrollPositionNone];
     [self scrollToDate:selectedDate];
     [self collectionView:_collectionView
-        didSelectItemAtIndexPath:selectedIndexPath];
+didSelectItemAtIndexPath:selectedIndexPath];
     _currentMonth = _selectedDate;
-  }
 }
 
 - (void)setCurrentDate:(NSDate *)currentDate {

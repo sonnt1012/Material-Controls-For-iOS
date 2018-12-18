@@ -36,6 +36,8 @@
 @property (nullable, strong, nonatomic) NSDate *selectedDate;
 @property (nonnull, strong, nonatomic) NSDate *minimumDate;
 @property (nullable, strong, nonatomic) NSDate *maximumDate;
+@property (nullable,assign, nonatomic) BOOL *useDarkTheme;
+@property (nullable,assign, nonatomic) BOOL *closeWhenClickBackground;
 @property(weak, nonatomic) id<MDDatePickerDialogDelegate> delegate;
 
 - (void)show;

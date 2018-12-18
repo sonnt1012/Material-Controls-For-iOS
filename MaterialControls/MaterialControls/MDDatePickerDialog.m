@@ -81,7 +81,7 @@
     calendar.dateHeader = _header;
     [popupHolder addSubview:calendar];
     self.calendar = calendar;
-    self.calendar.theme = MDCalendarThemeLight;
+    self.calendar.theme = self.useDarkTheme ? MDCalendarThemeDark : MDCalendarThemeLight;
 
     [self setBackgroundColor:self.calendar.backgroundColor];
 
@@ -171,7 +171,7 @@
 }
 
 - (void)btnClick:(id)sender {
-  self.hidden = YES;
+  self.hidden = self.closeWhenClickBackground;
 }
 
 - (void)layoutSubviews {

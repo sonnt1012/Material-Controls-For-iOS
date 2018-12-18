@@ -49,15 +49,15 @@
 - (IBAction)btnSelectDate:(id)sender {
   if (!_datePicker) {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    dateComponents.year = 1980;
-    dateComponents.month = 1;
-    dateComponents.day = 5;
+    dateComponents.year = 2018;
+    dateComponents.month = 12;
+    dateComponents.day = 17;
     NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
       
     MDDatePickerDialog *datePicker = [[MDDatePickerDialog alloc] init];
     _datePicker = datePicker;
-    _datePicker.minimumDate = date;
     _datePicker.selectedDate = date;
+    _datePicker.closeWhenClickBackground = NO;
     _datePicker.delegate = self;
   }
   [_datePicker show];

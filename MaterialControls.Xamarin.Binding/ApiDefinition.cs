@@ -159,8 +159,20 @@ namespace MaterialControls
 		[Export("currentDate", ArgumentSemantic.Copy)]
 		NSDate CurrentDate { get; set; }
 
-		// @property (copy, nonatomic) NSDate * currentMonth;
-		[Export("currentMonth", ArgumentSemantic.Copy)]
+        //@property(copy, nonatomic) NSDate* selectedDate;
+        [Export("selectedDate", ArgumentSemantic.Copy)]
+        NSDate SelectedDate { get; set; }
+
+        //@property(copy, nonatomic) NSDate* minimumDate;
+        [Export("minimumDate", ArgumentSemantic.Copy)]
+        NSDate MinimumDate { get; set; }
+
+        //@property(copy, nonatomic) NSDate* maximumDate;
+        [Export("maximumDate", ArgumentSemantic.Copy)]
+        NSDate MaximumDate { get; set; }
+
+        // @property (copy, nonatomic) NSDate * currentMonth;
+        [Export("currentMonth", ArgumentSemantic.Copy)]
 		NSDate CurrentMonth { get; set; }
 
 		// @property (assign, nonatomic) MDCalendarTheme theme;

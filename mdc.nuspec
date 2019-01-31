@@ -3,15 +3,15 @@
     <metadata>
         <!-- Required elements-->
         <id>MaterialControls</id>
-        <version>1.2.4.1-pre</version>
+        <version>1.2.4.2-pre</version>
         <description>Xamarin.iOS Binding Library - MaterialControls</description>
         <authors>FPT, NAXAM</authors>
         <owners>FPT Software</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <title>MaterialControls for iOS</title>
-        <releaseNotes>MaterialControls v1.2.4.1 for iOS</releaseNotes>
+        <releaseNotes>MaterialControls v1.2.4.2 for iOS</releaseNotes>
         <summary>Xamarin.iOS Binding Library - MaterialControls</summary>
-        <iconUrl>https://avatars1.githubusercontent.com/u/25535951</iconUrl>
+        <iconUrl>https://i.imgur.com/jKTuQR9.png</iconUrl>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
         <projectUrl>https://github.com/fptsoftware/materialcontrols</projectUrl>
         <copyright>Copyright (c) 2017 FPT</copyright>

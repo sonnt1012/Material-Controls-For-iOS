@@ -146,7 +146,7 @@
 
   _cellStyle = MDCalendarCellStyleCircle;
 
-  self.minimumDate = [NSDateHelper mdDateWithYear:1970 month:1 day:1];
+  self.minimumDate = [NSDateHelper mdDateWithYear:1910 month:1 day:1];
     
   if (!_maximumDate) {
        _maximumDate = [NSDateHelper mdDateWithYear:2037 month:12 day:31];

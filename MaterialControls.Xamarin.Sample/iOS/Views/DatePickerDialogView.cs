@@ -37,6 +37,7 @@ namespace MaterialControls.Xamarin.Sample.iOS.Views
 				pickerDialog.Delegate = new DatePickerDialogDelegate(TextField);
 			}
 			pickerDialog.Calendar.OverrideSelectedCellColor(UIColor.Red);
+			pickerDialog.Calendar.MinimumDate = ConvertDateTimeToNSDate(new DateTime(1910, 1, 1));
 			pickerDialog.MaximumDate = ConvertDateTimeToNSDate(new DateTime(2019,1,1));
 			pickerDialog.CloseWhenClickBackground = true;
 			pickerDialog.Show();
